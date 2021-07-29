@@ -9,10 +9,7 @@ def storyStart
     puts "Find the cave of Warx" #(6 atk 4 ac 10 hp)
   elsif direction == "left"
     puts "Come across a Troll guarding a bridge" #(2 atk 1 ac 5 hp)
-
-
   end
-
 end
 
 player_atk = 1
@@ -22,19 +19,19 @@ player_gp = 10
 
 sword_atk = 5
 sword_cost = 5
-bow_atk = 8 
+bow_atk = 8
 bow_cost = 8
-helmet_ac = 2 
+helmet_ac = 2
 helmet_cost = 2
-bracers_ac = 1 
+bracers_ac = 1
 bracers_cost = 1
 shield_ac = 5
-shield_cost = 5 
+shield_cost = 5
 
 def shopping
   weapon = gets.chomp
   if weapon == "Sword"
-    player_atk += sword_atk  
+    player_atk += sword_atk
     puts " You now have an attack of #{player_atk}"
   # elsif weapon == "bow"
   #   puts "Come across a Troll guarding a bridge" #(2 atk 1 ac 5 hp)
@@ -46,12 +43,12 @@ end
 
 
 # def attacks
-#   puts "Sword = 5 atk 
-#   Bow = 8 atk 
-#   Helmet = 2 ac 
-#   Bracers = 1 ac  
+#   puts "Sword = 5 atk
+#   Bow = 8 atk
+#   Helmet = 2 ac
+#   Bracers = 1 ac
 #   Shield = 5 ac  "
-   
+
 
 
 puts "You are a brand new adventure with a set of clothes, 10gp. You also have 1 atk, 1 Armor class(ac) and 10 hit points(hp).  You have been summoned by the king
@@ -61,14 +58,42 @@ The castle
 Proctor valley"
 
 firstChoice = gets.chomp
-
 if firstChoice == "The Store"
-  puts "Welcome to my store my name is Arturo look over my items. buy what ever you need Adventure 
+  puts "Welcome to my store my name is Arturo look over my items. buy what ever you need Adventure
   Sword = 5 atk = 5gp
   Bow = 8 atk = 8 gp
   Helmet = 2 ac = 2gp
   Bracers = 1 ac = 1gp
-  Shield = 5 ac = 5gp"
+  Shield = 5 ac = 5gp
+  Please type in item you want to buy:"
+  choice = gets.chomp
+  if choice == "Sword"
+    player_atk += 5
+    p "your attack is now #{player_atk}"
+    player_gp -= 5
+    p "you now have #{player_gp} gold"
+    storyStart
+  elsif choice == "Bow"
+    player_atk += 8
+    p "your attack is now #{player_atk}"
+    player_gp -= 8
+    p "you now have #{player_gp} gold"
+    storyStart
+  elsif choice == "Helmet"
+    player_gp -= 2
+    p "you now have #{player_gp} gold"
+    player_ac += 2
+    p "your armor is now #{player_ac}"
+    storyStart
+  elsif choice == "Bracers"
+    player_gp -= 1
+    p "you now have #{player_gp} gold"
+    player_ac += 1
+    p "your armor is now #{player_ac}"
+    storyStart
+  end
+
+
 
 
 
@@ -84,6 +109,3 @@ elsif firstChoice == "The castle"
   He lives in a cave in the dreaded Proctor Valley. The king
   wants you to save her."
 end
-
-
-   
